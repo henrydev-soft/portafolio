@@ -1,16 +1,47 @@
 ---
-
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Henry Jiménez | Ingeniero de Sistemas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="presentation">
+        <img
+          src="/PerfilDigital.png"
+          alt="Foto de Henry Jiménez"
+          class="profile-img"
+        />
+        <h1>¡Hola! Soy Henry Jiménez</h1>
+        <p class="text-presentation">
+          <span class="highlight-green">Ingeniero de Software</span> con más de 10
+          años de experiencia en desarrollo de software, análisis de datos e investigación
+          aplicada.
+        </p>
+        <div class="social-buttons">
+          <a
+            href="https://www.linkedin.com/in/henry-jimenez-col/"
+            target="_blank"
+            rel="noopener"
+            class="btn-linkedin">LinkedIn</a
+          >
+          <a
+            href="https://github.com/henrydev-soft"
+            target="_blank"
+            rel="noopener"
+            class="btn-github">GitHub</a
+          >
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>

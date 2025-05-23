@@ -1,0 +1,137 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at 50% 0%, #102218 0%, #072013 40%, #031008 100%);
+  color: rgb(222, 222, 222);
+}
+
+main {
+  flex: 1;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.presentation h1 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.text-presentation {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40vw;
+}
+
+.highlight-green {
+  color: #48af82;
+  font-weight: 700;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.social-buttons a {
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.btn-linkedin {
+  background: #48af82;
+  color: #fff;
+  border: none;
+}
+
+.btn-linkedin:hover {
+  background: #2e7d4f; /* Un verde más oscuro */
+  color: #eafff3;
+}
+
+.btn-github {
+  background: #23272e;
+  color: #fff;
+}
+
+.btn-github:hover {
+  background: #161b22;
+}
+
+footer {
+  font-family: 'Montserrat', Arial, sans-serif;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+/* Estilos Responsive */
+@media (max-width: 768px) {
+  .presentation h1 {
+    font-size: 2rem;
+  }
+
+  .text-presentation {
+    font-size: 1.2rem;
+    max-width: 80vw;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .presentation h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-presentation {
+    font-size: 1rem;
+    max-width: 90vw;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
