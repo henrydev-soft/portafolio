@@ -1,0 +1,21 @@
+---
+import { FolderCode } from "@lucide/astro";
+import ProjectItem from "../ProjectItem.astro";
+---
+
+
+
+<section class="section">
+  <h2 class="section-title">
+    <FolderCode height={28} width={28} />
+    Proyectos
+  </h2>
+  <ProjectItem
+    image="/proyectos/SmartCampusImage.jpg"
+    title="Smart Campus UIS"
+    technologies={["Spring Boot", "MySQL", "MongoDB","EMQX","InfluxDB","Grafana","Docker"]}
+    description="Plataforma IoT diseñada para el ecosistema universitario, construida bajo una arquitectura de microservicios. Su objetivo es brindar un entorno escalable de investigación e interoperabilidad que facilite el desarrollo, integración y despliegue de aplicaciones IoT dentro del campus universitario."
+    github="https://github.com/UIS-IoT-Smart-Campus"
+    demo="https://mi-proyecto-demo.com"
+  />
+</section>

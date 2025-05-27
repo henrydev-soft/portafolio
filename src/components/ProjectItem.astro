@@ -1,0 +1,46 @@
+---
+const { image, title, technologies, description, github, demo } = Astro.props;
+---
+
+<div class="project-item">
+    <div class="project-image">
+        <img src={image} alt={`Imagen de ${title}`} />
+    </div>
+    <div class="project-info">
+        <h3 class="project-title">{title}</h3>
+        <div class="project-tech">
+            {
+                technologies.map((tech: string) => (
+                    <span class="tech-badge">{tech}</span>
+                ))
+            }
+        </div>
+        <p class="project-description">{description}</p>
+        <div class="project-links">
+            {
+                github && (
+                    <a
+                        href={github}
+                        target="_blank"
+                        rel="noopener"
+                        class="project-link"
+                    >
+                        GitHub
+                    </a>
+                )
+            }
+            {
+                demo && (
+                    <a
+                        href={demo}
+                        target="_blank"
+                        rel="noopener"
+                        class="project-link"
+                    >
+                        Demo
+                    </a>
+                )
+            }
+        </div>
+    </div>
+</div>

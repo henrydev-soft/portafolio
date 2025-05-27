@@ -1,0 +1,15 @@
+---
+const { role, company, date, description } = Astro.props;
+---
+<div class="experience-item">
+  <div class="experience-details">
+    <h3 class="experience-role">{role}</h3>
+    <div class="experience-meta">
+      <span class="experience-company">{company}</span>
+      <span class="experience-date">{date}</span>
+    </div>
+  </div>
+  <div class="experience-description">
+    {description}
+  </div>
+</div>

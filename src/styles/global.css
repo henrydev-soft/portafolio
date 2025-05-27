@@ -1,3 +1,5 @@
+/* Global Styles */
+
 html, body {
   height: 100%;
   margin: 0;
@@ -8,21 +10,27 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(ellipse at 50% 0%, #102218 0%, #072013 40%, #031008 100%);
+  background: radial-gradient(ellipse at 50% 0%, #09404b 0%, #092c2f 40%, #000000 100%);
   color: rgb(222, 222, 222);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
 main {
   flex: 1;
 }
 
+/* Presentation Section */
+
 .presentation {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 3rem;
-  text-align: center;
+  text-align: left;
+  gap: 2rem;
 }
 
 .presentation h1 {
@@ -33,11 +41,11 @@ main {
 }
 
 .profile-img {
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
@@ -47,8 +55,6 @@ main {
   font-weight: 200;
   line-height: 1.8;
   margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 40vw;
 }
 
@@ -60,12 +66,15 @@ main {
 .social-buttons {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 1.5rem;
 }
 
 .social-buttons a {
-  padding: 0.6rem 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.6rem 1rem;
   border-radius: 30px;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 600;
@@ -73,16 +82,24 @@ main {
   font-size: 1rem;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  vertical-align: middle;
 }
 
+.social-buttons svg {
+  display: block;
+  height: 18px;
+  width: 18px;
+}
+
+
 .btn-linkedin {
-  background: #48af82;
+  background: #236d6d;
   color: #fff;
   border: none;
 }
 
 .btn-linkedin:hover {
-  background: #2e7d4f; /* Un verde más oscuro */
+  background: #194e4e;
   color: #eafff3;
 }
 
@@ -95,6 +112,85 @@ main {
   background: #161b22;
 }
 
+.btn-cv {
+  background: #fff;
+  color: #236d6d;
+  border: none;
+}
+
+.btn-cv:hover {
+  background: #e2e2e2;
+  color: #174646;
+}
+
+/* General Section Styles */
+.section {
+  margin: 4rem auto 2rem auto;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;   
+  gap: 0.7rem;          
+  font-size: 2rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+
+/* Experience Section */
+.experience-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  gap: 2rem;
+}
+
+.experience-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 180px;
+}
+
+.experience-role {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+  color: #48af82;
+  text-align: left;
+}
+
+.experience-meta {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.05rem;  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.experience-description {
+  font-family: 'Montserrat', Arial, sans-serif;
+  flex: 2;
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  margin: 0;
+  text-align: left;
+}
+
 footer {
   font-family: 'Montserrat', Arial, sans-serif;
   text-align: center;
@@ -102,8 +198,99 @@ footer {
 }
 
 
+/* Projects Section */
+.project-item {
+  font-family: 'Montserrat', Arial, sans-serif;
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  margin-bottom: 2.5rem;
+  background: #0739396f;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.project-image {
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.project-info {
+  flex: 2;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.5rem;
+  color: #48af82;
+  margin-bottom: 0.5rem;
+}
+
+.project-tech {
+  margin-bottom: 0.7rem;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: #194e4e;
+  color: #eafff3;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  padding: 0.2em 0.8em;
+  margin-right: 0.5em;
+  margin-bottom: 0.3em;
+}
+
+.project-description {
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  margin-top: auto;
+}
+
+.project-link {
+  display: inline-block;
+  background: #23272e;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.4em 1em;
+  margin-right: 0.7em;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.project-link:hover {
+  background: #48af82;
+  color: #fff;
+}
+
+
+
 /* Estilos Responsive */
+
 @media (max-width: 768px) {
+
+  /* Presentation Section */
   .presentation h1 {
     font-size: 2rem;
   }
@@ -111,12 +298,52 @@ footer {
   .text-presentation {
     font-size: 1.2rem;
     max-width: 80vw;
+    margin-right: 5vw;
   }
 
   .profile-img {
     width: 120px;
     height: 120px;
+    margin: 10px;
   }
+
+  .social-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
+  .social-buttons a {
+    width: 50%;
+    justify-content: center;
+  }
+
+  /* Experience Section */
+  .experience-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 15px;
+  }
+  .experience-details, .experience-description {
+    align-items: flex-start;
+    text-align: left;
+    min-width: unset;
+  }
+
+  /* Projects Section */
+  .project-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .project-image {
+    max-width: 100%;
+    min-width: unset;
+  }
+  .project-info {
+    padding: 1rem;
+    padding-top:0;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -132,6 +359,7 @@ footer {
   .profile-img {
     width: 100px;
     height: 100px;
+     margin: 10px;
   }
 }
 
