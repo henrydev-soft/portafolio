@@ -1,3 +1,20 @@
+/* Portofolio Profesional
+Diseño y desarrollo por: 
+  -Henry A. Jiménez 
+Primera versión: 28-05-2025
+Ultima Actualización: 28-05-2025
+*/
+
+/* Variables */
+
+:root {
+  --bg-dark: radial-gradient(ellipse at 50% 0%, #09404b 0%, #092c2f 40%, #000000 100%);
+  --bg-light: radial-gradient(ellipse at 50% 0%, #dfe6e7 0%, #dfe6e7 40%, #d1eded 100%);
+}
+
+
+
+
 /* Global Styles */
 
 html, body {
@@ -10,8 +27,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(ellipse at 50% 0%, #09404b 0%, #092c2f 40%, #000000 100%);
+  background: var(--bg-dark);
   color: rgb(222, 222, 222);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+body.theme-light {
+  background: var(--bg-light);
+  color: #222;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -21,6 +46,79 @@ main {
   flex: 1;
 }
 
+/* Navbar Styles */
+.navbar-centered {
+  position: fixed;
+  top: 0.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: #2a7c7c32;
+  border-radius: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 0 1rem;
+  width: auto;
+  min-width: 260px;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  justify-content: center;
+}
+
+.navbar-link {
+  color: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.4em 1em;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
+}
+
+body.theme-light .navbar-link {
+  color: #111;
+}
+
+.navbar-link:hover {
+  color: #48af82;
+}
+
+body.theme-light .navbar-link:hover {
+  color: #3a9898;
+}
+
+.navbar-theme-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.4em 1em;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
+}
+
+body.theme-light .navbar-theme-btn {
+  color: #236d6d;
+}
+
+.navbar-theme-btn:hover {
+  color: #48af82;
+}
+
+body.theme-light .navbar-theme-btn:hover {
+  color: #4badad;
+}
+
+
 /* Presentation Section */
 
 .presentation {
@@ -28,7 +126,7 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 4.5rem;
   text-align: left;
   gap: 2rem;
 }
@@ -40,6 +138,10 @@ main {
   margin-bottom: 0.5rem;
 }
 
+body.theme-light .presentation h1 {
+  color: #236d6d;
+}
+
 .profile-img {
   width: 180px;
   height: 180px;
@@ -47,6 +149,10 @@ main {
   object-fit: cover;
   margin-bottom: 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+body.theme-light .profile-img  {
+  content: url("/PerfilDigitalLight.jpg");
 }
 
 .text-presentation {
@@ -61,6 +167,10 @@ main {
 .highlight-green {
   color: #48af82;
   font-weight: 700;
+}
+
+body.theme-light .highlight-green {
+  color: #236d6d;
 }
 
 .social-buttons {
@@ -171,6 +281,10 @@ main {
   text-align: left;
 }
 
+body.theme-light .experience-role{
+  color: #236d6d;
+}
+
 .experience-meta {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 1.05rem;  
@@ -191,6 +305,10 @@ main {
   text-align: left;
 }
 
+body.theme-light .experience-description{
+  color: #222;
+}
+
 footer {
   font-family: 'Montserrat', Arial, sans-serif;
   text-align: center;
@@ -199,38 +317,50 @@ footer {
 
 
 /* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
 .project-item {
   font-family: 'Montserrat', Arial, sans-serif;
+  flex-direction: column !important;
   display: flex;
-  gap: 2rem;
-  align-items: stretch;
-  margin-bottom: 2.5rem;
   background: #0739396f;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  margin-bottom: 0; /* Elimina el margin-bottom si lo tienes */
+}
+
+body.theme-light .project-item{
+  background: #bbbbbb00;
 }
 
 .project-image {
-  flex: 1;
-  min-width: 180px;
-  max-width: 320px;
+  width: 100%;
+  height: 230px;
+  max-width: 100%;
+  min-width: unset;
+  border-radius: 0;
+  background: #0f172a;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0f172a;
+  overflow: hidden;
 }
 
-.project-image img {
+.project-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 0;
+  display: block;
 }
+
 
 .project-info {
-  flex: 2;
-  padding: 1.5rem 1rem;
+  padding: 1.2rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -241,6 +371,10 @@ footer {
   font-size: 1.5rem;
   color: #48af82;
   margin-bottom: 0.5rem;
+}
+
+body.theme-light .project-title{
+  color: #194e4e;
 }
 
 .project-tech {
@@ -263,25 +397,37 @@ footer {
   margin-bottom: 1rem;
 }
 
+body.theme-light .project-description{
+  color: #222;
+}
+
 .project-links {
   margin-top: auto;
 }
 
 .project-link {
-  display: inline-block;
+  display: inline-flex;
+  gap: 0.4em;
   background: #23272e;
   color: #fff;
   border-radius: 20px;
   padding: 0.4em 1em;
   margin-right: 0.7em;
+  margin-top: 0.2em;
   text-decoration: none;
   font-weight: 600;
   transition: background 0.2s, color 0.2s;
 }
 
 .project-link:hover {
-  background: #48af82;
+  background: #194e4e;
   color: #fff;
+}
+
+.project-link svg {
+  display: block;
+  height: 16px;
+  width: 16px;
 }
 
 
@@ -319,6 +465,10 @@ footer {
   }
 
   /* Experience Section */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
   .experience-item {
     flex-direction: column;
     gap: 0.5rem;

@@ -1,18 +1,19 @@
 ---
+import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/sections/Header.astro";
 import Experience from "../components/sections/Experience.astro";
 import Project from "../components/sections/Project.astro";
-import { Code } from "@lucide/astro";
 import "../styles/global.css";
 ---
 
-<html>
+<html data-theme="dark" lang="es">
   <head>
     <meta charset="UTF-8" />
     <title>Henry Jiménez | Ingeniero de Software</title>
   </head>
   <body>
+    <Navbar />
     <main>
       <Header />
       <Experience />   

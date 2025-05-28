@@ -5,17 +5,27 @@ import ProjectItem from "../ProjectItem.astro";
 
 
 
-<section class="section">
+<section class="section" id="proyectos">
   <h2 class="section-title">
     <FolderCode height={28} width={28} />
     Proyectos
   </h2>
-  <ProjectItem
-    image="/proyectos/SmartCampusImage.jpg"
-    title="Smart Campus UIS"
-    technologies={["Spring Boot", "MySQL", "MongoDB","EMQX","InfluxDB","Grafana","Docker"]}
-    description="Plataforma IoT diseñada para el ecosistema universitario, construida bajo una arquitectura de microservicios. Su objetivo es brindar un entorno escalable de investigación e interoperabilidad que facilite el desarrollo, integración y despliegue de aplicaciones IoT dentro del campus universitario."
-    github="https://github.com/UIS-IoT-Smart-Campus"
-    demo="https://mi-proyecto-demo.com"
-  />
+  <div class="projects-grid">
+    <ProjectItem
+      imageDark="/proyectos/SmartCampusImage.jpg"
+      imageLight="/proyectos/SmartCampusImageLight.jpg"
+      title="Smart Campus UIS"
+      technologies={["Spring Boot", "MySQL", "MongoDB","EMQX","InfluxDB","Grafana"]}
+      description="Plataforma IoT escalable basada en microservicios, diseñada para fomentar la investigación y el desarrollo de aplicaciones interoperables dentro del campus universitario."
+      github="https://github.com/UIS-IoT-Smart-Campus"
+      demo="https://mi-proyecto-demo.com"
+    />
+    <ProjectItem
+      imageDark="/proyectos/GecoCapturaBlack.jpg"
+      imageLight="/proyectos/GecoCaptura.jpg"
+      title="Geco Scale"
+      technologies={["Django", "PostgreSQL", "PostGIS","OpenLayers","Geoserver"]}
+      description="Aplicación web para simular fenómenos y consultar datos geoespaciales sobre escamas inorgánicos. Desarrollada y administrada en producción, con más de 5 años de operación continua en la industria petrolera."
+    />
+  </div>  
 </section>

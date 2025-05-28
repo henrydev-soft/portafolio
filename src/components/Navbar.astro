@@ -1,0 +1,23 @@
+---
+import { SunMoon } from "@lucide/astro";
+---
+
+
+<nav class="navbar-centered">
+  <div class="navbar-content">
+    <a href="#experiencia" class="navbar-link">Experiencia</a>
+    <a href="#proyectos" class="navbar-link">Proyectos</a>
+    <button id="theme-toggle" class="navbar-theme-btn" aria-label="Cambiar tema">
+      <SunMoon class="navbar-theme-icon" />
+    </button>
+  </div>
+</nav>
+
+<script>
+  if (typeof window !== "undefined") {
+    const btn = document.getElementById('theme-toggle');
+    btn?.addEventListener('click', () => {
+      document.body.classList.toggle('theme-light');
+    });
+  }
+</script>
