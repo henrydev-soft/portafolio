@@ -151,9 +151,6 @@ body.theme-light .presentation h1 {
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
-body.theme-light .profile-img  {
-  content: url("/PerfilDigitalLight.jpg");
-}
 
 .text-presentation {
   font-family: 'Montserrat', Arial, sans-serif;
