@@ -1,4 +1,4 @@
-name: Deploy Astro to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -11,25 +11,35 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Instalar Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 18
 
-      - name: Instalar dependencias
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Construir sitio
+      - name: Build with Astro
         run: npm run build
 
-      - name: Desplegar en GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          path: ./dist
+
+  deploy-to-github-pages:
+    needs: deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
