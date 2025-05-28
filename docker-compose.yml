@@ -1,0 +1,7 @@
+services:
+  astro-app:
+    build: .
+    container_name: astro-portafolio
+    ports:
+      - "8080:80"
+    restart: unless-stopped
